@@ -1,0 +1,23 @@
+footer {
+  border-top: black 10px solid;
+  background-color: #0077ff;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+  }
+  

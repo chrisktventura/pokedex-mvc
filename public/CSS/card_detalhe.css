@@ -1,0 +1,29 @@
+.card__detalhes {
+    display: flex;
+    text-align: center;
+  }
+  
+  .card__detalhes img {
+    border-radius: 2%;
+    background-color: rgba(129, 129, 129, 0.267);
+    margin-top: 1rem;
+    max-width: 50%;
+  }
+  
+  p.detalhes__txt {
+    text-align: center;
+    color: #fff;
+  }
+  
+  a.fechar-card {
+    text-align: start;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a.fechar-card:hover {
+    animation-duration: 2s;
+    animation-name: gradiente;
+    animation-iteration-count: infinite;
+  }
+  

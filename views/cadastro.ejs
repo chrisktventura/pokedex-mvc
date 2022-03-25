@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <title>Cadastro de Pokémons</title>
+</head>
+
+<body>
+    <header class="header flex">
+        <ul class="header__list flex">
+            <li id="blue-light" class="header__list__item circle"></li>
+            <li>
+                <a class="header__list__item" href="/">
+                    <h2>Pokédex</h2>
+                </a>
+            </li>
+
+            <li><a class="header__list__item bold" href="cadastro">Cadastre um pokemon</a></li>
+            <li><a class="header__list__item bold" href="contato">Contato</a></li>
+
+            <div class="header__circle-container flex">
+                <div class="header__circle__item circle" id="red-light"></div>
+                <div class="header__circle__item circle" id="yellow-light"></div>
+                <div class="header__circle__item circle" id="green-light"></div>
+            </div>
+        </ul>
+    </header>
+    <main>
+        <section id="cadastro" class="update create">
+            <div>
+                <% if (pokemon===undefined) { %>
+                    <h2>Cadastre um novo Pokemon!</h2>
+                    <form action="/create" method="POST">
+                        <% } else { %>
+                            <h2>Atualização do Pokemon</h2>
+                            
+                            <form action="/update/<%= pokemon.id %>" method="POST">
+                                <% } %>
+                                
+                                    <label for="numero">ID:</label>
+                                    <input type="text" placeholder="Ex: 1" id="numero" name="numero" value="<%= pokemon.id %>" required />
+
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" placeholder="Ex: Pikachu" id="nome" name="nome" value="<%= pokemon.nome %>" required />
+
+                                    <label for="tipo">Tipo:</label>
+                                    <input type="text" placeholder="Ex: Eletric" id="tipo" name="tipo" value="<%= pokemon.tipo %>" required />
+
+                                    <label for="imagem">Link da Imagem:</label>
+                                    <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem %>" required />
+
+                                    <label for="descricao">Descrição:</label>
+                                    <input type="text" placeholder="Ex: Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy." id="descricao" name="descricao" value="<%= pokemon.descricao %>" required />
+
+                                    <label for="detalhes">Altura:</label>
+                                    <input type="text" placeholder="Ex: 0.4 m" id="altura" name="altura" value="<%= pokemon.altura %>" required />
+
+                                    <label for="detalhes">Peso:</label>
+                                    <input type="text" placeholder="Ex: 6.0 kg" id="peso" name="peso" value="<%= pokemon.peso %>" required />
+
+                                    <label for="detalhes">Categoria:</label>
+                                    <input type="text" placeholder="Ex: Mouse" id="categoria" name="categoria" value="<%= pokemon.categoria %>" required />
+
+                                    <label for="detalhes">Habilidade:</label>
+                                    <input type="text" placeholder="Ex: Static" id="habilidade" name="habilidade" value="<%= pokemon.habilidade %>" required />
+                                    <% if (!pokemon) { %>
+                                        <button id="btnCadastrar" type="submit">Cadastrar</button>
+                                        <% } else { %>
+                                            <button id="btnAtualizar" type="submit">Atualizar</button>
+                                            <% } %>
+                            </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados para chrisktventura &copy;</p>
+        <p>
+            Dados retirados de
+            <a target="_blank" href="https://www.pokemon.com/br/pokedex/">Pokédex</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

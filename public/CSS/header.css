@@ -1,0 +1,132 @@
+.header {
+  border-bottom: black 10px solid;
+  width: auto;
+}
+
+.header__list {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  background-color: #ff363d;
+}
+.header__list__title {
+  font-size: 60px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header__list__item {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0 auto;
+  display: flex;
+  padding: 1rem;
+}
+.header__list__item:hover {
+  animation-duration: 2s;
+  animation-name: gradiente;
+  animation-iteration-count: infinite;
+}
+
+.header__circle-container {
+  justify-content: center;
+
+  /* max-width: 500px; */
+  align-items: flex-start;
+}
+.header__circle__item {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+#blue-light {
+  margin: 1.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100px;
+  background-color: #00ffff;
+  border: rgb(0, 0, 0) 10px double;
+}
+
+#red-light {
+  background-color: #f80404;
+  border: rgb(9, 9, 9) 2px solid;
+  animation-name: luz1;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+
+ 
+}
+
+#yellow-light {
+  background-color: #fdf202;
+  border: rgb(9, 9, 9) 2px solid;
+  animation-name: luz2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+#green-light {
+  background-color: #05a654;
+  border: rgb(9, 9, 9) 2px solid;
+  animation-name: luz3;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+
+}
+
+@media only screen and (max-width: 766px) {
+  .header__list__title {
+    font-size: 20px;
+  }
+  .header__list__item {
+    font-size: 16px;
+    align-self: flex-end;
+  }
+}
+
+@keyframes gradiente {
+  0% {
+    color: #0511f2;
+  }
+  20% {
+    color: #1c2b59;
+  }
+  40% {
+    color: #307cbf;
+  }
+  60% {
+    color: #f2b807;
+  }
+  80% {
+    color: #bf920a;
+  }
+  100% {
+    color: #0511f2;
+  }
+}
+
+@keyframes luz1{
+  50%{
+    background-color:#fdf202;
+  }100%{
+    background-color: #05a654;
+  }
+}
+@keyframes luz2{
+  50%{
+    background-color: #05a654;
+  }100%{
+    background-color: #f80404;
+  }
+}
+@keyframes luz3{
+  50%{
+    background-color: #f80404;
+  }100%{
+    background-color:#fdf202;
+  }
+}

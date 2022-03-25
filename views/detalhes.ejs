@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="CSS/main.css" />
     <title>Pokedex</title>
 </head>
@@ -19,7 +18,8 @@
                     <h2>Pokédex</h2>
                 </a>
             </li>
-            <li><a class="header__list__item bold" href="cadastro">Cadastre um pokemon</a></li>
+
+            <li><a class="header__list__item bold" href="update">Cadastre um pokemon</a></li>
             <li><a class="header__list__item bold" href="contato">Contato</a></li>
 
             <div class="header__circle-container flex">
@@ -29,50 +29,54 @@
             </div>
         </ul>
     </header>
-
     <main>
-        <section href="" id="cards" class="cards flex">
-            <h2>Pokémons</h2>
 
-            <% pokedex.forEach((pokemon)=> { %>
+        <section id="cards" class="card__detalhes flex">
+            <h2>Pokemons</h2>
 
-                <div class="card">
+            <% pokedex.forEach((pokemon[id]) => { %>
+
+                <div class="card_">
+                    <div>
+                        <a class="fechar-card" href="/">Fechar</a>
+                      </div>
+
                     <img src="<%= pokemon.imagem %>" alt="" />
 
                     <h3>
                         <%= pokemon.nome %>
                     </h3>
 
-                    <p class="descricao">
+                    <p class="detalhes__txt">
                         <%= pokemon.descricao %>
                     </p>
-
-                    <p class="descricao">Tipo:
+                    <p class="detalhes__txt">
                         <%= pokemon.tipo %>
                     </p>
+                    <p class="detalhes__txt">
+                        <%= pokemon.altura %>
+                    </p>
+                    <p class="detalhes__txt">
+                        <%= pokemon.peso %>
+                    </p>
+                    <p class="detalhes__txt">
+                        <%= pokemon.categoria %>
+                    </p>
+                    <p class="detalhes__txts">
+                        <%= pokemon.habilidade %>
+                    </p>
 
-
-                    <button id="detalhes" class="btnDetails">
-            <a class="btnDetails" href="/detalhes">+ Detalhes</a>
-          </button>
-
-                    <a id="editar" href="/cadastro/<%= pokemon.id %>">Editar</a>
-                    <a id="apagar" href="/delete/<%= pokemon.id %>">Apagar</a>
                 </div>
                 <% }) %>
         </section>
 
-        
-    </main>
 
-    <footer>
-        <p>Todos os direitos reservados para chrisktventura &copy;</p>
-        <p>
-            Dados retirados de
-            <a target="_blank" href="https://www.pokemon.com/br/pokedex/">Pokédex</a
-        >
-      </p>
-    </footer>
-  </body>
-  <script src="/script.js"></script>
+        <footer>
+            <p>Todos os direitos reservados para chrisktventura &copy;</p>
+            <p>Dados retirados de <a target="_blank" href="https://www.pokemon.com/br/pokedex/">Pokédex</a></p>
+        </footer>
+
+</body>
+<script src="/script.js"></script>
+
 </html>

@@ -1,0 +1,36 @@
+
+
+.contato{    
+    margin: 10rem 10rem 5rem 10rem;
+    padding: 10rem 0 5rem 0;    
+    display: flex;
+    font-size: 5rem;    
+    justify-content: center;
+    background-color: #00FFFF;
+    border:1rem  rgb(8, 93, 167) double ;
+    border-radius: 5rem;
+    flex-wrap: wrap;
+    font-style: 'Orbitron', sans-serif !important;
+}
+
+.item a{   
+    color: #fff;
+    text-decoration: solid;
+}
+
+.item a:hover{
+    animation-duration: 2s;
+    animation-name: gradiente;
+    animation-iteration-count: infinite;
+}
+
+@media only screen and (max-width: 766px) {
+
+    .contato{
+        text-align: center;
+        margin: 3rem 3rem 2.5rem 3rem;
+        padding: 5rem 0 2.5rem 0; 
+        font-size: 2rem;
+    }
+}
+    
