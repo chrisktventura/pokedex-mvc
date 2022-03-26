@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="CSS/main.css" />
-    <title>Cadastro de Pokémons</title>
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <title>Cadastro de Pokémon</title>
 </head>
 
 <body>
@@ -32,11 +31,11 @@
     <main>
         <section id="cadastro" class="update create">
             <div>
-                <% if (pokemon===undefined) { %>
-                    <h2>Cadastre um novo Pokemon!</h2>
+                <% if (!pokemon) { %>
+                    <h2>Cadastre um novo Pokémon!</h2>
                     <form action="/create" method="POST">
                         <% } else { %>
-                            <h2>Atualização do Pokemon</h2>
+                            <h2>Atualização do Pokémon</h2>
                             
                             <form action="/update/<%= pokemon.id %>" method="POST">
                                 <% } %>
@@ -73,7 +72,7 @@
                                             <button id="btnAtualizar" type="submit">Atualizar</button>
                                             <% } %>
                             </form>
-
+                    
             </div>
         </section>
     </main>

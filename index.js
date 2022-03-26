@@ -1,7 +1,8 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const { url } = require("inspector");
 const path = require("path");
+// const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -9,6 +10,7 @@ const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
+// app.use(expressLayouts);
 
 const pokedex = [{
         id: 1,
@@ -45,6 +47,7 @@ const pokedex = [{
         habilidade: "Overgrow"
     },
 ];
+// let pokemon = undefined;
 
 let pokemon = {
     id: "",
@@ -77,7 +80,7 @@ app.get("/detalhes/:id", (req, res) => {
     res.render("detalhes", { pokemon });
 });
 
-//cadastro
+// cadastro
 app.post("/cadastro", (req, res) => {
     const pokemon = req.body;
     pokemon.id = pokedex.length + 1;
@@ -90,6 +93,7 @@ app.get("/cadastro", (req, res) => {
 })
 //editar
 app.get("/cadastro/:id", (req, res) => {
+    
     pokemon = pokedex.find((pok) => pok.id === +req.params.id);    
     res.render("cadastro", { pokemon });
 })
@@ -100,7 +104,7 @@ app.post("/update/:id", (req, res) => {
     newPokemon.id = id + 1;
     pokedex[id] = newPokemon;
     pokemon = undefined;
-    res.redirect("/#cards");
+    res.redirect("/");
 });
 
 
