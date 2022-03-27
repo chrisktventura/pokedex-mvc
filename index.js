@@ -48,7 +48,7 @@ const pokedex = [{
     },
 ];
 let pokemon = undefined;
-
+let message = '';
 // let pokemon = {
 //     id: "",
 //     nome: "",
@@ -87,6 +87,10 @@ app.get("/cadastro", (req, res) => {
     // pokemon.id = pokedex.length + 1;
     // pokedex.push(pokemon);
     // pokemon = undefined;
+    message = `Seu Pokémon foi cadastrado com sucesso!`;
+    setTimeout(() => {
+      message = "";
+    }, 5000);
     res.render("cadastro");
 });
 
@@ -109,6 +113,11 @@ app.post("/update", (req, res) => {
     pokedex[id] = newPokemon;
     pokedex.push(newPokemon);
     pokemon = undefined;
+    message = `Seu Pokémon foi cadastrado com sucesso!`;
+    setTimeout(() => {
+      message = "";
+    }, 5000);
+    
     res.redirect("/");
 });
 
@@ -117,6 +126,10 @@ app.post("/update", (req, res) => {
 app.get("/delete/:id", (req, res) => {
     const id = +req.params.id - 1;
     delete pokedex[id];
+    message = `Seu Pokémon foi deletado com sucesso!`;
+  setTimeout(() => {
+    message = "";
+  }, 5000);
     res.redirect("/");
 });
 
