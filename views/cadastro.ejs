@@ -31,46 +31,39 @@
     <main>
         <section id="cadastro" class="update create">
             <div>
-                <% if (!pokemon) { %>
-                    <h2>Cadastre um novo Pokémon!</h2>
-                    <form action="/create" method="POST">
-                        <% } else { %>
-                            <h2>Atualização do Pokémon</h2>
-                            
-                            <form action="/update/<%= pokemon.id %>" method="POST">
-                                <% } %>
+                
+                    <h2>Cadastre um novo Pokemon!</h2>
+                    <form action="/update" method="POST">
                                 
                                     <label for="numero">ID:</label>
-                                    <input type="text" placeholder="Ex: 1" id="numero" name="numero" value="<%= pokemon.id %>" required />
+                                    <input type="number" placeholder="Ex: 1" id="numero" name="numero" value="" required />
 
                                     <label for="nome">Nome:</label>
-                                    <input type="text" placeholder="Ex: Pikachu" id="nome" name="nome" value="<%= pokemon.nome %>" required />
+                                    <input type="text" placeholder="Ex: Pikachu" id="nome" name="nome" value="" required />
 
                                     <label for="tipo">Tipo:</label>
-                                    <input type="text" placeholder="Ex: Eletric" id="tipo" name="tipo" value="<%= pokemon.tipo %>" required />
+                                    <input type="text" placeholder="Ex: Eletric" id="tipo" name="tipo" value="" required />
 
                                     <label for="imagem">Link da Imagem:</label>
-                                    <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem %>" required />
+                                    <input type="text" id="imagem" name="imagem" value="" required />
 
                                     <label for="descricao">Descrição:</label>
-                                    <input type="text" placeholder="Ex: Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy." id="descricao" name="descricao" value="<%= pokemon.descricao %>" required />
+                                    <input type="text" placeholder="Ex: Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy." id="descricao" name="descricao"   value="" required />
 
                                     <label for="detalhes">Altura:</label>
-                                    <input type="text" placeholder="Ex: 0.4 m" id="altura" name="altura" value="<%= pokemon.altura %>" required />
+                                    <input type="text" placeholder="Ex: 0.4 m" id="altura" name="altura" value="" required />
 
                                     <label for="detalhes">Peso:</label>
-                                    <input type="text" placeholder="Ex: 6.0 kg" id="peso" name="peso" value="<%= pokemon.peso %>" required />
+                                    <input type="text" placeholder="Ex: 6.0 kg" id="peso" name="peso" value="" required />
 
                                     <label for="detalhes">Categoria:</label>
-                                    <input type="text" placeholder="Ex: Mouse" id="categoria" name="categoria" value="<%= pokemon.categoria %>" required />
+                                    <input type="text" placeholder="Ex: Mouse" id="categoria" name="categoria"   value="" required />
 
                                     <label for="detalhes">Habilidade:</label>
-                                    <input type="text" placeholder="Ex: Static" id="habilidade" name="habilidade" value="<%= pokemon.habilidade %>" required />
-                                    <% if (!pokemon) { %>
+                                    <input type="text" placeholder="Ex: Static" id="habilidade" name="habilidade"  value=""  required />
+
                                         <button id="btnCadastrar" type="submit">Cadastrar</button>
-                                        <% } else { %>
-                                            <button id="btnAtualizar" type="submit">Atualizar</button>
-                                            <% } %>
+                                
                             </form>
                     
             </div>
